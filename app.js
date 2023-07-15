@@ -8,7 +8,7 @@ let oneEuroIs = {
 // declaramos una funcion con el mismo nombre "formEuroToDollar"
 const fromDollarToYen = function(valueInDollar){
     // convertimos el valor a dolares
-    let valueInYen = (valueInDollar / 1.2)* oneEuroIs.JPY;
+    let valueInYen = (valueInDollar / oneEuroIs.USD )* oneEuroIs.JPY;
     // retornamos el valor
     return valueInYen;
 }
@@ -24,10 +24,10 @@ const fromEuroToDollar = function(valueInEuro){
 // declaramos una funcion con el mismo nombre "formEuroToDollar"
 const fromYenToPound = function(valueInYen){
     // convertimos el valor a dolares
-    let valueInPound = (valueInYen / 127.9) * oneEuroIs.GBP;
+    let valueInPound = (valueInYen / oneEuroIs.JPY) * oneEuroIs.GBP;
     // retornamos el valor
     return valueInPound;
 }
 
 // tenemos que incluir la funcion en el exports para que sea exportada a otros archivos como test.js
-module.exports = { fromDollarToYen, fromEuroToDollar, fromYenToPound }
+module.exports = { fromEuroToDollar, fromDollarToYen, fromYenToPound }
